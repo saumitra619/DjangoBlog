@@ -15,9 +15,6 @@ Clone or download this repository and open it in your editor of choice. In a ter
 ```
 virtualenv env
 ```
-
-That will create a new folder `env` in your project directory. Next activate it with this command on mac/linux:
-
 ```
 source env/bin/active
 ```
