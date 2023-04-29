@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
-import os
+import os , dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,10 +25,7 @@ SECRET_KEY = '2c01po+)o256$4u%)p)!ztd5i#6!nh6&ag1qqbn#09$*ep-+bt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'localhost',
-    '.vercel.app'
-]
+ALLOWED_HOSTS = ['127.0.0.1','djangoblog-nvnt.onrender.com']
 
 
 # Application definition
@@ -80,10 +77,8 @@ WSGI_APPLICATION = 'djangoapp.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': 
+        dj_database_url.config(default='postgres://djangoblogdb_user:XBiK8u3xnF6gH1sAy6Ob0daqjvPNaMgp@dpg-ch6b7fak728iqr6v5rm0-a.singapore-postgres.render.com/djangoblogdb')
 }
 
 
@@ -124,8 +119,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
